@@ -3,9 +3,6 @@
 [![Version](https://img.shields.io/badge/version-2.0.1-green.svg)](https://github.com/dtkdtk/TabModifier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-# ❗ NOTE: The project is no longer maintained. Use [Active fork (v2.0)](https://github.com/dtkdtk/TabModifier)
-===================================================
-
 A simple and flexible tab list manager for SpongeForge servers, built on **SpongeAPI 7.4.0** with **LuckPerms** integration and **PlaceholderAPI** support.
 
 ---
