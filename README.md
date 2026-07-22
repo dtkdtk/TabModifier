@@ -74,14 +74,14 @@ This plugin requires the following dependencies to be installed on your server:
 
 ## What's New in v2.0
 
-- **Command info**: `/tabmodifier` now shows available subcommands based on your permissions
+- **Command info**: `/tabmodifier` and `help` subcommand now shows plugin info & available subcommands based on your permissions
 - **Removed alias**: The `/tab` alias has been removed to prevent conflicts
 - **Updated dependencies**:
   - SpongeAPI: `7.1.0` → `7.4.0`
-  - LuckPerms: `5.3` → `5.4`
-  - PlaceholderAPI: `4.2` → `4.4`
-- **Code cleanup**: Improved stability and performance
-- **Re-maintained fork**: Active maintenance and support
+  - LuckPerms: `4.x` → `5.4`
+  - PlaceholderAPI: `4.4`
+- **Rewrite README, add MIT License, add `build.gradle`**
+- **Re-maintained fork**: It's alive!
 
 ---
 
