@@ -32,7 +32,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.util.*;
 
-@Plugin(id = "tabmodifier", name = "Tab Modifier", version = "2.0.1")
+@Plugin(id = "tabmodifier2", name = "Tab Modifier", version = "2.0.1")
 public class TabModifier {
     private static TabModifier instance;
 

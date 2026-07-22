@@ -2,6 +2,8 @@
 
 [![Version](https://img.shields.io/badge/version-2.0.1-green.svg)](https://github.com/dtkdtk/TabModifier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Ore Downloads](https://img.shields.io/ore/dt/tabmodifier2
+)](https://ore.spongepowered.org/dtkdtk/Tab-Modifier-v2)
 
 A simple and flexible tab list manager for SpongeForge servers, built on **SpongeAPI 7.4.0** with **LuckPerms** integration and **PlaceholderAPI** support.
 
@@ -78,7 +80,8 @@ This plugin requires the following dependencies to be installed on your server:
   - SpongeAPI: `7.1.0` → `7.4.0`
   - LuckPerms: `4.x` → `5.4`
   - PlaceholderAPI: `4.4`
-- **Rewrite README, add MIT License, add `build.gradle`**
+- **Rewrite README, add MIT License, add `build.gradle`, update default config**
+- Fixed newlines (`\n` and `\\n`)
 - **Re-maintained fork**: It's alive!
 
 ---

@@ -1,6 +1,6 @@
 [
     {
-        "modid": "tabmodifier",
+        "modid": "tabmodifier2",
         "name": "Tab Modifier",
         "version": "2.0.1",
         "dependencies": [
@@ -13,7 +13,7 @@
         ]
     },
     {
-        "modid": "tabmodifier",
+        "modid": "tabmodifier2",
         "name": "Tab Modifier",
         "version": "2.0.1",
         "description": "A Simple Tab Manager Plugin based on Luckperms and PlaceholderAPI"

@@ -37,7 +37,7 @@ sponge {
         version('1.0')
     }
 
-    plugin('tabmodifier') {
+    plugin('tabmodifier2') {
         displayName('Tab Modifier')
         version(project.version)
         entrypoint('me.nipo.tabmodifier.TabModifier')
@@ -45,10 +45,10 @@ sponge {
 
         license("MIT")
         contributor('Nipo') {
-            description('Author')
+            description('Original author')
         }
         contributor('dtkdtk0') {
-            description('Contributor/Maintainer')
+            description('Maintainer')
         }
 
         dependency('spongeapi') {
