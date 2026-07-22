@@ -11,6 +11,8 @@ import org.slf4j.Logger;
 import org.spongepowered.api.Game;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.CommandResult;
+import org.spongepowered.api.command.CommandSource;
+import org.spongepowered.api.command.args.CommandContext;
 import org.spongepowered.api.command.args.GenericArguments;
 import org.spongepowered.api.command.spec.CommandSpec;
 import org.spongepowered.api.config.DefaultConfig;
@@ -99,33 +101,7 @@ public class TabModifier {
         Config.buildConfig(configLoader, configFile);
 
         CommandSpec commands = CommandSpec.builder()
-                .executor((src, args) -> {
-                    Map<String, String> subCommands = new LinkedHashMap<>();
-                    subCommands.put("reload", "me.nipo.tabmodifier.reload");
-                    subCommands.put("refresh", "me.nipo.tabmodifier.refresh");
-                    subCommands.put("setheader", "me.nipo.tabmodifier.setheader");
-                    subCommands.put("setfooter", "me.nipo.tabmodifier.setfooter");
-
-                    List<String> available = new ArrayList<>();
-                    for (Map.Entry<String, String> entry : subCommands.entrySet()) {
-                        if (src.hasPermission(entry.getValue())) {
-                            available.add(entry.getKey());
-                        }
-                    }
-
-                    if (available.isEmpty()) {
-                        src.sendMessage(TextSerializers.FORMATTING_CODE.deserialize("&cYou don't have permission to use this command!"));
-                        return CommandResult.empty();
-                    } else {
-                        src.sendMessage(TextSerializers.FORMATTING_CODE.deserialize(String.format(
-                                "&7| &b&l%s &3(v%s)\n&7| &bAvailable subcommands:\n&7|   &3",
-                                pluginContainer.getName(),
-                                pluginContainer.getVersion().get()
-                                ) + String.join(", ", available)
-                        ));
-                        return CommandResult.success();
-                    }
-                })
+                .executor(this::parentCommandExecutor)
                 .child(
                         CommandSpec.builder()
                                 .description(Text.of("reload config"))
@@ -159,6 +135,15 @@ public class TabModifier {
                                 .arguments(GenericArguments.remainingJoinedStrings(Text.of("message")))
                                 .build(),
                         "setfooter"
+                )
+                .child(
+                        CommandSpec.builder()
+                                .description(Text.of("get list of subcommands and plugin info"))
+                                .permission("me.nipo.tabmodifier.help")
+                                .executor(this::parentCommandExecutor)
+                                .arguments()
+                                .build(),
+                        "help"
                 )
                 .build();
 
@@ -232,10 +217,39 @@ public class TabModifier {
     }
 
     public <T> Optional<T> getPlaceholders() {
-        return (Optional<T>) placeholders.map(v -> (T) v);
+        return placeholders.map(v -> (T) v);
     }
 
     public ConfigurationLoader<CommentedConfigurationNode> getLoader() {
         return configLoader;
+    }
+
+    private CommandResult parentCommandExecutor(CommandSource src, CommandContext args) {
+        Map<String, String> subCommands = new LinkedHashMap<>();
+        subCommands.put("help", "me.nipo.tabmodifier.help");
+        subCommands.put("reload", "me.nipo.tabmodifier.reload");
+        subCommands.put("refresh", "me.nipo.tabmodifier.refresh");
+        subCommands.put("setheader", "me.nipo.tabmodifier.setheader");
+        subCommands.put("setfooter", "me.nipo.tabmodifier.setfooter");
+
+        List<String> available = new ArrayList<>();
+        for (Map.Entry<String, String> entry : subCommands.entrySet()) {
+            if (src.hasPermission(entry.getValue())) {
+                available.add(entry.getKey());
+            }
+        }
+
+        if (available.isEmpty()) {
+            src.sendMessage(TextSerializers.FORMATTING_CODE.deserialize("&cYou don't have permission to use this command!"));
+            return CommandResult.empty();
+        } else {
+            src.sendMessage(TextSerializers.FORMATTING_CODE.deserialize(String.format(
+                            "&7| &b&l%s &3(v%s)\n&7| &bAvailable subcommands:\n&7|   &3",
+                            pluginContainer.getName(),
+                            pluginContainer.getVersion().get()
+                    ) + String.join(", ", available)
+            ));
+            return CommandResult.success();
+        }
     }
 }

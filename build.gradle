@@ -54,19 +54,19 @@ sponge {
         dependency('spongeapi') {
             optional(false)
             loadOrder('after')
-            version('7.1.0-SNAPSHOT')
+            version('7.4.0')
         }
 
         dependency('luckperms') {
             optional(false)
             loadOrder('after')
-            version('5.3')
+            version('5.4')
         }
 
         dependency('placeholderapi') {
             optional(false)
             loadOrder('before')
-            version('4.5.1')
+            version('4.4')
         }
     }
 }
