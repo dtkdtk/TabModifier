@@ -1,6 +1,6 @@
 # Tab Modifier
 
-[![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](https://github.com/yourusername/TabModifier)
+[![Version](https://img.shields.io/badge/version-2.0.1-green.svg)](https://github.com/dtkdtk/TabModifier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # ❗ NOTE: The project is no longer maintained. Use [Active fork (v2.0)](https://github.com/dtkdtk/TabModifier)
