@@ -12,7 +12,8 @@ import org.spongepowered.api.text.format.TextColors;
 public class ExecutorSetFooter implements CommandExecutor {
     @Override
     public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
-        Config.setFooter(args.<String>getOne("message").get());
+        String newText = args.<String>getOne("message").get();
+        Config.setFooter(newText);
         Config.saveConfig();
         CommandRefresh.updatahdAndft();
         src.sendMessage(Text.of(TextColors.YELLOW, "footer value set, tablist has been refreshed"));

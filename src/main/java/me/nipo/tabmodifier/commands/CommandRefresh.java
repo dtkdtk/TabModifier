@@ -140,6 +140,8 @@ public class CommandRefresh {
     }
 
     private static Text applyPlaceholders(String str, Player player, Player players) {
+        str = str.replaceAll("\\\\n", "\n");
+        str = str.replaceAll("\\n", "\n");
         Text text = TextSerializers.FORMATTING_CODE.deserialize(str);
         Optional<PlaceholderService> placeholders = TabModifier.getInstance().getPlaceholders();
         if (placeholders.isPresent()) {

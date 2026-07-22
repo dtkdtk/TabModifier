@@ -12,7 +12,8 @@ import org.spongepowered.api.text.format.TextColors;
 public class ExecutorSetHeader implements CommandExecutor {
     @Override
     public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
-        Config.setHeader(args.<String>getOne("message").get());
+        String newText = args.<String>getOne("message").get();
+        Config.setHeader(newText);
         Config.saveConfig();
         CommandRefresh.updatahdAndft();
         src.sendMessage(Text.of(TextColors.YELLOW, "header value set, tablist has been refreshed"));

@@ -31,16 +31,16 @@ public class Config {
     }
 
     private static void setupConfig() {
-        configNode.getNode("InitialValue", "Prefix").setValue("&d[&bMC&d]");
-        configNode.getNode("InitialValue", "Suffix").setValue("&9[&b0&9]");
+        configNode.getNode("InitialValue", "Prefix").setValue("&b[TabModifier] &f");
+        configNode.getNode("InitialValue", "Suffix").setValue("&c [%player_health%HP]");
         configNode.getNode("InitialValue").setComment("If players' prefix is not set yet, plugin will use initial value instead");
         configNode.getNode("showPrefix").setValue("true");
         configNode.getNode("showSuffix").setValue("true");
         configNode.getNode("showDisplayName").setValue("true");
         configNode.getNode("showHeader").setValue("true");
         configNode.getNode("showFooter").setValue("true");
-        configNode.getNode("HeaderValue").setValue("&a&lThis is &b&lHeader");
-        configNode.getNode("FooterValue").setValue("&a&lThis is &d&lFooter\n&b&lLook, the SecondLine");
+        configNode.getNode("HeaderValue").setValue("&b&lTab Modifier &3(v2.0.0)\\n&6Change your tab header/footer\\n&6and add LuckPerms prefixes\\n&8----------<>----------").setComment("This is Header (at the top)");
+        configNode.getNode("FooterValue").setValue("&8----------<>----------\\n&7Online: &a[%server_online%]\\n&7TPS: &a[%server_tps%]").setComment("This is Footer (at the bottom)");
         configNode.getNode("UpdateInterval", "Header&Footer").setValue(5);
         configNode.getNode("UpdateInterval", "NameList").setValue(10);
         configNode.getNode("UpdateInterval", "Header&Footer").setComment("How long, in seconds, should plugin update tablist's header & footer");
