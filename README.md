@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/badge/version-2.0.0-green.svg)](https://github.com/yourusername/TabModifier)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Re-maintained fork** of the original [TabModifier](https://github.com/Nipo/TabModifier) by **Nipo**
+> **Re-maintained fork** of the original [TabModifier](https://github.com/NipoCN/TabModifier) by **Nipo**
 
 A simple and flexible tab list manager for SpongeForge servers, built on **SpongeAPI 7.4.0** with **LuckPerms** integration and **PlaceholderAPI** support.
 
@@ -26,11 +26,11 @@ A simple and flexible tab list manager for SpongeForge servers, built on **Spong
 
 This plugin requires the following dependencies to be installed on your server:
 
-| Dependency | Version | Required |
-|------------|---------|------|
-| **SpongeForge** | 1.12.2-2838+ | Yes |
-| **LuckPerms** | 5.4+ | Yes |
-| **PlaceholderAPI** | 4.4+ | No (optional) |
+| Dependency         | Version      | Required      |
+|--------------------|--------------|---------------|
+| **SpongeForge**    | 1.12.2-2838+ | Yes           |
+| **LuckPerms**      | 5.4+         | Yes           |
+| **PlaceholderAPI** | 4.4+         | No (optional) |
 
 ---
 
@@ -91,7 +91,7 @@ This plugin requires the following dependencies to be installed on your server:
 <summary><b>How do I set a prefix/suffix?</b></summary>
 
 Use LuckPerms commands:
-```bash
+```sh
 lp user <username> meta setprefix <weight> <prefix>
 lp group <groupname> meta setprefix <weight> <prefix>
 ```
@@ -120,5 +120,7 @@ Yes! Use `&` followed by a color code (e.g., `&c` for red, `&l` for bold).
 ## 📄 License
 
 This project is licensed under the **MIT License**. Original author is Nipo *(NipoCN)*.
+
+# [Issues & Bugs (GitHub)](https://github.com/dtkdtk/TabModifier/issues)
 
 [Source code (GitHub)](https://github.com/dtkdtk/TabModifier)
